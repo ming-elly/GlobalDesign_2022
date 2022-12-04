@@ -3,9 +3,17 @@
     color: rgb(70, 70, 70);
 }
 
-.about-txt{
+.center-txt{
     max-width: 70%;
     margin: auto;
+}
+
+.logo{
+    margin-top: 250px;
+}
+
+.center-img{
+    text-align: center;
 }
 
 .member{
@@ -45,6 +53,10 @@
 
     body{
         overflow: auto;
+    }
+    
+    .logo{
+        margin-top: 150px;
     }
     
     .member-txt{
