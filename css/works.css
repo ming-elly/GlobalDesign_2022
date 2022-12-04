@@ -1,0 +1,30 @@
+.center-img{
+    text-align: center;
+}
+
+.center-txt{
+    max-width: 950px;
+    margin: auto;
+}
+
+.shirt{
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    font-family: bilo, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.shirt-img{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.shirt-txt{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}

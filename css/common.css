@@ -1,0 +1,297 @@
+@charset "utf-8";
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0 auto; /*中央寄せ*/
+    font-family: bilo, fot-tsukuardgothic-std,sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    /* フォントの変更*/
+}
+
+h2{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+header{
+    margin-top: 0;
+    display: flex;
+    width: 100%;
+    height: 75px;
+    /*background: rgba(192, 147, 252, 0.796);*/
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+}
+
+header a{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgb(70, 70, 70);
+}
+
+header img{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
+header nav{
+    margin: 0 0 0 auto;
+}
+
+.menu-item{
+    list-style: none;
+    display: inline-block;
+    padding: 0px 30px 0px 30px;
+}
+
+.sp-header{
+    display: none;
+}
+
+.bg{
+    width: 100%;
+    height: auto;
+}
+
+.spbg{
+    display: none;
+}
+
+.scroll{
+	position:absolute;
+	bottom:1%;
+	right:50%;
+	animation: arrowmove 2s ease-in-out infinite;
+}
+
+@keyframes arrowmove{
+      0%{bottom:1%;}
+      50%{bottom:5%;}
+     100%{bottom:1%;}
+ }
+
+/*
+.scroll span{
+	position: absolute;
+	left:-20px;
+	bottom:10px;
+	color: #eee;
+	font-size: 0.7rem;
+	letter-spacing: 0.05em;
+	-ms-writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl; 
+}
+*/
+
+/* 矢印の描写 */
+.scroll:before {
+    content: "";
+    /*描画位置*/
+    position: absolute;
+    bottom: 0;
+    right: -6px;
+    /*矢印の形状*/
+    width: 1.5px;
+    height: 20px;
+    background: #eee;
+    transform: skewX(-31deg);
+}
+
+.scroll:after{
+	content:"";
+    /*描画位置*/
+	position: absolute;
+	bottom:0;
+	right:0;
+    /*矢印の形状*/
+	width:1.5px;
+	height: 50px;
+	background:#eee;
+}
+
+.fadeIn {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
+
+.fadeIn.is-show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.fadeUpTrigger{
+    opacity: 0;
+}
+
+.img_r{
+    margin-top: 100px;
+    text-align: right;
+}
+
+.img_l{
+    margin-top: 100px;
+    text-align: left;
+}
+
+.fadeIn_l{
+    opacity: 0;
+    transform: translate(-50%, 0);
+    transition: 2s;
+}
+
+.fadeIn_l.is-show {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+@media screen and (max-width: 420px) {
+    
+    ul{
+        list-style: none;
+    }
+
+    .header-logo{
+        display: none;
+    }
+
+    .header-nav{
+        display: none;
+    }
+
+    .sp-header{
+        display: block;
+    }
+
+    #drawer {
+        display: none;
+    }
+    label {
+        cursor: pointer;
+        position: fixed;
+    }
+    .open {
+        z-index: 2;
+        top: 8px;
+        right: 8px;
+        width: 48px;
+        height: 48px;
+        border-radius: 48px;
+        background: #ffd6a1;
+        transition: background .6s, transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    .open::before,
+    .open::after {
+        content: "";
+    }
+    .open span,
+    .open::before,
+    .open::after {
+        content: "";
+        position: absolute;
+        top: calc(50% - 1px);
+        left: 30%;
+        width: 40%;
+        border-bottom: 2px solid white;
+        transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    .open::before {
+        transform: translateY(-8px);
+    }
+    .open::after {
+        transform: translateY(8px);
+    }
+    .close {
+        z-index: 1;
+        inset: 0;
+        pointer-events: none;
+        transition: background .6s;
+    }
+    #drawer:checked + .open {
+        background: #dc6688;
+        transform: translateX(-280px);
+    }
+    #drawer:checked + .open span {
+        transform: scaleX(0);
+    }
+    #drawer:checked + .open::before {
+        transform: rotate(135deg) scaleX(1.2);
+    }
+    #drawer:checked + .open::after {
+        transform: rotate(-135deg) scaleX(1.2);
+    }
+    #drawer:checked ~ .close {
+        pointer-events: auto;
+        background: rgba(0,0,0,.3);
+    }
+    
+    /* :::::: drawer menu :::::: */
+    .menu {
+        z-index: 1;
+        position: fixed;
+        overflow: auto;
+        top: 0;
+        right: 0;
+        width: 280px;
+        height: 100%;
+        margin: 0;
+        padding: 10px;
+        box-sizing: border-box;
+        background: rgba(191, 121, 197, 0.6);
+        transform: translateX(100%);
+        transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    .menu h2 {
+        color: white;
+        letter-spacing: .1em;
+        text-align: center;
+    }
+    .menu ul {
+        margin: 0;
+        padding: 0;
+    }
+    .menu li {
+        line-height: 1.4;
+    }
+    .menu li:not(:first-child) {
+        border-top: 1px solid rgba(255,255,255,.6);
+    }
+    .menu a {
+        display: block;
+        padding: 1em 2em;
+        color: white;
+        text-decoration: inherit;
+        transition: background .6s;
+    }
+    .menu a:hover {
+        background: black;
+    }
+    #drawer:checked ~ .menu {
+        transform: none;
+    }
+
+    .bg{
+        display: none;
+    }
+
+    .spbg{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    
+
+}
