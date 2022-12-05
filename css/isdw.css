@@ -112,6 +112,10 @@
   margin-top: 200px;
 }
 
+.bottom{
+  margin-bottom: 150px;
+}
+
 @media screen and (max-width: 420px) {
 
   .about{
@@ -141,6 +145,11 @@
     display: inline-block;
     max-width: 75%;
     text-align: left;
+  }
+
+  .exh-img{
+    width: 70%;
+    height: 70%;
   }
 
 }  
