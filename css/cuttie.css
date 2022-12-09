@@ -1,0 +1,100 @@
+.sp-about{
+    display: none;
+}
+
+.flexTop{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.flexTxtl{
+    max-width: 40%;
+    margin-left: 80px;
+}
+
+.flexTxtr{
+    max-width: 40%;
+    margin-right: 80px;
+}
+
+.flexcuttie{
+    margin-top: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.sp-feature{
+    display: none;
+}
+
+.sp-usage{
+    display: none;
+}
+
+.center-txt{
+    max-width: 75%;
+    margin: auto;
+  }
+  
+  .title{
+    margin-top: 250px;
+  }
+  
+  .center-img{
+    text-align: center;
+  }
+
+  .bottom{
+    margin-bottom: 200px;
+  }
+
+@media screen and (max-width: 440px) {
+    .pc-about{
+        display: none;
+    }
+
+    .sp-about{
+        display: block;
+    }
+
+    .pc-feature{
+        display: none;
+    }
+
+    .sp-feature{
+        display: block;
+    }
+
+    .sp-featureTop{
+        display: block;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        text-align: center;
+      }
+      
+      .sp-featDescription{
+        display: inline-block;
+        max-width: 75%;
+        text-align: left;
+      }
+
+      .pc-usage{
+        display: none;
+      }
+
+      .sp-usage{
+        display: block;
+      }
+
+      .sp-card{
+        width: 60%;
+        height: 60%;
+      }
+
+}
+
